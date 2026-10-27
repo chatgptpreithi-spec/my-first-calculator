@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pass or Fail</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            background: #f0f4f8;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Student Result</h2>
+
+        <input type="number" id="marks" placeholder="Enter marks">
+
+        <br>
+
+        <button onclick="checkResult()">Check Result</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function checkResult() {
+            let marks = Number(document.getElementById("marks").value);
+
+            if (marks < 0 || marks > 100 ||
+                document.getElementById("marks").value === "") {
+                document.getElementById("result").innerText =
+                    "Enter valid marks (0-100)";
+            } else if (marks >= 35) {
+                document.getElementById("result").innerText = "Pass!";
+            } else {
+                document.getElementById("result").innerText = "Fail!";
+            }
+        }
+    </script>
+
+</body>
+</html>
